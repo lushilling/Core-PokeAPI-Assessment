@@ -11,14 +11,13 @@ public class CoreServiceImplemented implements CoreService {
 	private RestTemplate rest;
 
 	public String addUser(Object user) {
-		String addUserRequest = rest.postForObject("http://locahost:8081/user/addUser", user, String.class);
+		String addUserRequest = rest.postForObject("http://localhost:8081/user/addUser/", user, String.class);
 		
 		// if request does NOT return status 201
 		// String result = "user not added"
+	
 		
-		String result = "User added";
-		
-		return result;
+		return addUserRequest;
 	}
 
 	public String userIdFindPokeByName(Long id, String name) {

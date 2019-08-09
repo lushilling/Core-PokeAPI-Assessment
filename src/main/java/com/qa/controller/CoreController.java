@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.qa.service.CoreService;
 
 @RestController
-@RequestMapping("/Poke")
+@RequestMapping("/poke")
 public class CoreController {
 	
 	@Autowired
@@ -32,12 +32,12 @@ public class CoreController {
 	}
 	
 	@GetMapping("/user/{id}/poke/{name}")
-	public ResponseEntity<Object> findByNumber(@PathVariable Long id, String number) {
+	public ResponseEntity<Object> findByNumber(@PathVariable Long id, @PathVariable String number) {
 		return new ResponseEntity<>(service.userIdFindPokeByName(id, number), HttpStatus.OK);
 	}
 	
 	@GetMapping("/user/{id}/poke/{number}")
-	public ResponseEntity<Object> findByName(@PathVariable Long id, String number) {
+	public ResponseEntity<Object> findByName(@PathVariable Long id, @PathVariable String number) {
 		return new ResponseEntity<>(service.userIdFindPokeByNumber(id, number), HttpStatus.OK);
 	}
 	
