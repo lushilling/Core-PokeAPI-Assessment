@@ -12,11 +12,6 @@ public class CoreServiceImplemented implements CoreService {
 
 	public String addUser(Object user) {
 		String addUserRequest = rest.postForObject("http://localhost:8081/user/addUser/", user, String.class);
-		
-		// if request does NOT return status 201
-		// String result = "user not added"
-	
-		
 		return addUserRequest;
 	}
 

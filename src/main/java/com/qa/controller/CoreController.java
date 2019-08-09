@@ -31,12 +31,12 @@ public class CoreController {
 	public CoreController() {
 	}
 	
-	@GetMapping("/user/{id}/poke/{name}")
-	public ResponseEntity<Object> findByNumber(@PathVariable Long id, @PathVariable String number) {
-		return new ResponseEntity<>(service.userIdFindPokeByName(id, number), HttpStatus.OK);
+	@GetMapping("/user/{id}/pokeName/{name}")
+	public ResponseEntity<Object> findByNumber(@PathVariable Long id, @PathVariable String name) {
+		return new ResponseEntity<>(service.userIdFindPokeByName(id, name), HttpStatus.OK);
 	}
 	
-	@GetMapping("/user/{id}/poke/{number}")
+	@GetMapping("/user/{id}/pokeNumber/{number}")
 	public ResponseEntity<Object> findByName(@PathVariable Long id, @PathVariable String number) {
 		return new ResponseEntity<>(service.userIdFindPokeByNumber(id, number), HttpStatus.OK);
 	}
